@@ -113,6 +113,7 @@ async def next_page(bot, query):
         return
     
     settings = await get_settings(query.message.chat.id)
+    temp.SEND_ALL_TEMP[query.from_user.id] = files
     
     if settings['button']:
         btn = [
@@ -199,8 +200,7 @@ async def next_page(bot, query):
     except MessageNotModified:
         pass
     await query.answer()
-    temp.SEND_ALL_TEMP[key] = files          
-
+    
 # Year 
 @Client.on_callback_query(filters.regex(r"^years#"))
 async def years_cb_handler(client: Client, query: CallbackQuery):
@@ -311,7 +311,7 @@ async def filter_yearss_cb_handler(client: Client, query: CallbackQuery):
                     [InlineKeyboardButton(text="🎬 𝑹𝑬𝑸𝑼𝑬𝑺𝑻 𝑮𝑹𝑶𝑼𝑷 🎬", url=f"https://t.me/+BYcim_eiF3swMDhl")]
         )
     await query.edit_message_reply_markup(InlineKeyboardMarkup(btn))
-    temp.SEND_ALL_TEMP[key] = files
+    temp.SEND_ALL_TEMP[query.from_user.id] = files
 
 
 @Client.on_callback_query(filters.regex(r"^episodes#"))
@@ -522,7 +522,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
 
     await query.edit_message_reply_markup(InlineKeyboardMarkup(btn))
     SEASON[key] = files1
-    temp.SEND_ALL_TEMP[key] = files
+    temp.SEND_ALL_TEMP[query.from_user.id] = files
     
 @Client.on_callback_query(filters.regex(r"^qualities#"))
 async def qualities_cb_handler(client: Client, query: CallbackQuery):
@@ -639,7 +639,7 @@ async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
                     [InlineKeyboardButton(text="🎬 𝑹𝑬𝑸𝑼𝑬𝑺𝑻 𝑮𝑹𝑶𝑼𝑷 🎬", url=f"https://t.me/+BYcim_eiF3swMDhl")]
         )
     await query.edit_message_reply_markup(InlineKeyboardMarkup(btn))
-    temp.SEND_ALL_TEMP[key] = files
+    temp.SEND_ALL_TEMP[query.from_user.id] = files
 
 @Client.on_callback_query(filters.regex(r"^languages#"))
 async def languages_cb_handler(client: Client, query: CallbackQuery):
@@ -753,7 +753,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
                     [InlineKeyboardButton(text="🎬 𝑹𝑬𝑸𝑼𝑬𝑺𝑻 𝑮𝑹𝑶𝑼𝑷 🎬", url=f"https://t.me/+BYcim_eiF3swMDhl")]
         )
     await query.edit_message_reply_markup(InlineKeyboardMarkup(btn))
-    temp.SEND_ALL_TEMP[key] = files
+    temp.SEND_ALL_TEMP[query.from_user.id] = files
     
 @Client.on_callback_query(filters.regex(r"^spolling"))
 async def advantage_spoll_choker(bot, query):
@@ -1881,7 +1881,7 @@ async def auto_filter(client, msg, spoll=False):
         search, files, offset, total_results = spoll
     pre = 'filep' if settings['file_secure'] else 'file'
     key = f"{message.chat.id}-{message.id}"
-    temp.SEND_ALL_TEMP[key] = files
+    temp.SEND_ALL_TEMP[query.from_user.id] = files
     if settings['button']:
         btn = [
             [
