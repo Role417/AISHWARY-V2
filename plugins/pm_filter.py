@@ -563,7 +563,7 @@ async def qualities_cb_handler(client: Client, query: CallbackQuery):
     await query.edit_message_reply_markup(InlineKeyboardMarkup(btn))
 @Client.on_callback_query(filters.regex(r"^fl#"))
 async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
-    _, qual, userid, search, key = query.data.split("#")
+    _, qual, search, key = query.data.split("#")
     search = search.replace("_", " ")    
     req = query.from_user.id
     chat_id = query.message.chat.id
