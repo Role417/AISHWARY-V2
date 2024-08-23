@@ -133,7 +133,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"➲{get_size(file.file_size)}➩{file.file_name}", callback_data=f'files#{file.file_id}'
+                    text=f"➲{get_size(file.file_size)}➩ {file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
             ]
             for file in files
@@ -151,32 +151,7 @@ async def next_page(bot, query):
             ]
             for file in files
         ]
-    try:
-        if settings['auto_delete']:
-            btn.insert(0, 
-                [
-                    InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo'),
-                    InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'minfo'),
-                    InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')
-                ]
-            )
-        else:
-            btn.insert(0, 
-                [
-                    InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'minfo'),
-                    InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')
-                ]
-            )            
-    except KeyError:
-        await save_group_settings(query.message.chat.id, 'auto_delete', True)
-        btn.insert(0, 
-            [
-                InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo'),
-                InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'minfo'),
-                InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')
-            ]
-        )
-    try:
+    try:        
         if settings['max_btn']:
             if 0 < offset <= 10:
                 off_set = 0
@@ -329,32 +304,7 @@ async def language_check(bot, query):
 
         try:
             if settings['auto_delete']:
-                btn.insert(0, 
-                    [
-                        InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo'),
-                        InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'minfo'),
-                        InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')
-                    ]
-                )
-
-            else:
-                btn.insert(0, 
-                    [
-                        InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'minfo'),
-                        InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')
-                    ]
-                )
-                    
-        except KeyError:
-            await save_group_settings(query.message.chat.id, 'auto_delete', True)
-            btn.insert(0, 
-                [
-                    InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo'),
-                    InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'minfo'),
-                    InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')
-                ]
-            )
-        
+                       
         btn.insert(0, [
             InlineKeyboardButton("! Sᴇɴᴅ Aʟʟ Tᴏ PM !", callback_data=f"send_fall#{pre}#{0}#{userid}"),
             InlineKeyboardButton("! Lᴀɴɢᴜᴀɢᴇs !", callback_data=f"select_lang#{userid}")
@@ -1621,31 +1571,7 @@ async def auto_filter(client, msg, spoll=False):
             for file in files
         ]
     try:
-        if settings['auto_delete']:
-            btn.insert(0, 
-                [
-                    InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo'),
-                    InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'minfo'),
-                    InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')
-                ]
-            )
-        else:
-            btn.insert(0, 
-                [
-                    InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'minfo'),
-                    InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')
-                ]
-            )       
-    except KeyError:
-        await save_group_settings(message.chat.id, 'auto_delete', True)
-        btn.insert(0, 
-            [
-                InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo'),
-                InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'minfo'),
-                InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')
-            ]
-        )
-
+        if settings['auto_delete']:            
     btn.insert(0, [
         InlineKeyboardButton("! Sᴇɴᴅ Aʟʟ Tᴏ PM !", callback_data=f"send_fall#{pre}#{0}#{message.from_user.id}"),
         InlineKeyboardButton("! Lᴀɴɢᴜᴀɢᴇs !", callback_data=f"select_lang#{message.from_user.id}")
@@ -1751,10 +1677,8 @@ async def advantage_spell_chok(msg):
             photo="https://telegra.ph/file/37af06680cbd13176c536.jpg", 
             caption=NON_IMG.format(mv_rqst),
             reply_markup=InlineKeyboardMarkup(btn)
-    )
-    await asyncio.sleep()
-    await spl.delete()
-    await msg.delete()
+    )    
+    #await msg.delete()
     return   
 
 
