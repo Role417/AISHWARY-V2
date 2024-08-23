@@ -113,7 +113,7 @@ async def next_page(bot, query):
         return
     
     settings = await get_settings(query.message.chat.id)
-    temp.SEND_ALL_TEMP[query.from_user.id] = files
+    temp.SEND_ALL_TEMP[key] = files
     
     if settings['button']:
         btn = [
@@ -146,7 +146,7 @@ async def next_page(bot, query):
     )
     btn.insert(1, 
         [
-           InlineKeyboardButton("🔻𝐒𝐄𝐍𝐃 𝐀𝐋𝐋 𝐅𝐈𝐋𝐄𝐒🔻", callback_data=f"send_fall#{pre}#{0}#{userid}"),
+           InlineKeyboardButton("🔻𝐒𝐄𝐍𝐃 𝐀𝐋𝐋 𝐅𝐈𝐋𝐄𝐒🔻", callback_data=f"send_fall#{key}"),
            InlineKeyboardButton("🔻𝐋𝐀𝐍𝐆𝐔𝐀𝐆𝐄𝐒🔻", callback_data=f"languages#{search.replace(' ', '_')}#{key}")
         ]
     )
@@ -291,7 +291,7 @@ async def filter_yearss_cb_handler(client: Client, query: CallbackQuery):
     )
     btn.insert(1, 
         [
-           InlineKeyboardButton("🔻𝐒𝐄𝐍𝐃 𝐀𝐋𝐋 𝐅𝐈𝐋𝐄𝐒🔻", callback_data=f"send_fall#{pre}#{0}#{userid}"),
+           InlineKeyboardButton("🔻𝐒𝐄𝐍𝐃 𝐀𝐋𝐋 𝐅𝐈𝐋𝐄𝐒🔻", callback_data=f"send_fall#{key}"),
            InlineKeyboardButton("🔻𝐋𝐀𝐍𝐆𝐔𝐀𝐆𝐄𝐒🔻", callback_data=f"languages#{search.replace(' ', '_')}#{key}")
         ]
     )
@@ -311,7 +311,7 @@ async def filter_yearss_cb_handler(client: Client, query: CallbackQuery):
                     [InlineKeyboardButton(text="🎬 𝑹𝑬𝑸𝑼𝑬𝑺𝑻 𝑮𝑹𝑶𝑼𝑷 🎬", url=f"https://t.me/+BYcim_eiF3swMDhl")]
         )
     await query.edit_message_reply_markup(InlineKeyboardMarkup(btn))
-    temp.SEND_ALL_TEMP[query.from_user.id] = files
+    temp.SEND_ALL_TEMP[key] = files
 
 
 @Client.on_callback_query(filters.regex(r"^episodes#"))
@@ -456,7 +456,6 @@ async def seasons_cb_handler(client: Client, query: CallbackQuery):
 @Client.on_callback_query(filters.regex(r"^fs#"))
 async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
     _, season, search, key = query.data.split("#")
-
     search1 = search.replace("_", " ")
     req = query.from_user.id
     chat_id = query.message.chat.id
@@ -512,7 +511,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
     )
     btn.insert(1, 
         [
-           InlineKeyboardButton("🔻𝐒𝐄𝐍𝐃 𝐀𝐋𝐋 𝐅𝐈𝐋𝐄𝐒🔻", callback_data=f"send_fall#{pre}#{0}#{userid}"),
+           InlineKeyboardButton("🔻𝐒𝐄𝐍𝐃 𝐀𝐋𝐋 𝐅𝐈𝐋𝐄𝐒🔻", callback_data=f"send_fall#{key}"),
            InlineKeyboardButton("🔻𝐄𝐏𝐈𝐒𝐎𝐃𝐄🔻", callback_data=f"episodes#{season}#{search}#{key}")
         ]
     )
@@ -522,7 +521,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
 
     await query.edit_message_reply_markup(InlineKeyboardMarkup(btn))
     SEASON[key] = files1
-    temp.SEND_ALL_TEMP[query.from_user.id] = files
+    temp.SEND_ALL_TEMP[key] = files
     
 @Client.on_callback_query(filters.regex(r"^qualities#"))
 async def qualities_cb_handler(client: Client, query: CallbackQuery):
@@ -619,7 +618,7 @@ async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
     )
     btn.insert(1, 
         [
-           InlineKeyboardButton("🔻𝐒𝐄𝐍𝐃 𝐀𝐋𝐋 𝐅𝐈𝐋𝐄𝐒🔻", callback_data=f"send_fall#{pre}#{0}#{userid}"),
+           InlineKeyboardButton("🔻𝐒𝐄𝐍𝐃 𝐀𝐋𝐋 𝐅𝐈𝐋𝐄𝐒🔻", callback_data=f"send_fall#{key}"),
            InlineKeyboardButton("🔻𝐋𝐀𝐍𝐆𝐔𝐀𝐆𝐄𝐒🔻", callback_data=f"languages#{search.replace(' ', '_')}#{key}")
         ]
     )
@@ -639,7 +638,7 @@ async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
                     [InlineKeyboardButton(text="🎬 𝑹𝑬𝑸𝑼𝑬𝑺𝑻 𝑮𝑹𝑶𝑼𝑷 🎬", url=f"https://t.me/+BYcim_eiF3swMDhl")]
         )
     await query.edit_message_reply_markup(InlineKeyboardMarkup(btn))
-    temp.SEND_ALL_TEMP[query.from_user.id] = files
+    temp.SEND_ALL_TEMP[key] = files
 
 @Client.on_callback_query(filters.regex(r"^languages#"))
 async def languages_cb_handler(client: Client, query: CallbackQuery):
@@ -733,7 +732,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
     )
     btn.insert(1, 
         [
-           InlineKeyboardButton("🔻𝐒𝐄𝐍𝐃 𝐀𝐋𝐋 𝐅𝐈𝐋𝐄𝐒🔻", callback_data=f"send_fall#{pre}#{0}#{userid}"),
+           InlineKeyboardButton("🔻𝐒𝐄𝐍𝐃 𝐀𝐋𝐋 𝐅𝐈𝐋𝐄𝐒🔻", callback_data=f"send_fall#{key}"),
            InlineKeyboardButton("🔻𝐋𝐀𝐍𝐆𝐔𝐀𝐆𝐄𝐒🔻", callback_data=f"languages#{search.replace(' ', '_')}#{key}")
         ]
     )
@@ -753,7 +752,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
                     [InlineKeyboardButton(text="🎬 𝑹𝑬𝑸𝑼𝑬𝑺𝑻 𝑮𝑹𝑶𝑼𝑷 🎬", url=f"https://t.me/+BYcim_eiF3swMDhl")]
         )
     await query.edit_message_reply_markup(InlineKeyboardMarkup(btn))
-    temp.SEND_ALL_TEMP[query.from_user.id] = files
+    temp.SEND_ALL_TEMP[key] = files
     
 @Client.on_callback_query(filters.regex(r"^spolling"))
 async def advantage_spoll_choker(bot, query):
@@ -1881,7 +1880,7 @@ async def auto_filter(client, msg, spoll=False):
         search, files, offset, total_results = spoll
     pre = 'filep' if settings['file_secure'] else 'file'
     key = f"{message.chat.id}-{message.id}"
-    temp.SEND_ALL_TEMP[query.from_user.id] = files
+    temp.SEND_ALL_TEMP[key] = files
     if settings['button']:
         btn = [
             [
@@ -1912,7 +1911,7 @@ async def auto_filter(client, msg, spoll=False):
     )
     btn.insert(1, 
         [
-           InlineKeyboardButton("🔻𝐒𝐄𝐍𝐃 𝐀𝐋𝐋 𝐅𝐈𝐋𝐄𝐒🔻", callback_data=f"send_fall#{pre}#{0}#{message.from_user.id}"),
+           InlineKeyboardButton("🔻𝐒𝐄𝐍𝐃 𝐀𝐋𝐋 𝐅𝐈𝐋𝐄𝐒🔻", callback_data=f"send_fall#{key}"),
            InlineKeyboardButton("🔻𝐋𝐀𝐍𝐆𝐔𝐀𝐆𝐄𝐒🔻", callback_data=f"languages#{search.replace(' ', '_')}#{key}")
         ]
     )
