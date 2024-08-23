@@ -137,7 +137,7 @@ Nᴀᴍᴇ - {}"""
 
 𝗠𝗲𝘀𝘀𝗮𝗴𝗲 <b>: {}</b>"""
 
-    CAPTION = """"""<b>𝐻𝑒𝑙𝑙𝑜 👋 {mention} 😍
+    CAPTION = """<b>𝐻𝑒𝑙𝑙𝑜 👋 {mention} 😍
 
 {file_name}
 
