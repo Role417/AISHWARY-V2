@@ -1523,7 +1523,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "movedow":
         buttons = [[
-            InlineKeyboardButton("👥 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐆𝐫𝐨𝐮𝐩", url=f"https://t.me/+hB6czljfX_diZjNl"),
+            InlineKeyboardButton("👥 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐆𝐫𝐨𝐮𝐩", url=f"https://t.me/ARAKAL_THERAVAD_GROUP_01"),
             InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data='help')
         ]]
         await client.edit_message_media(
@@ -1539,7 +1539,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "movereqs":
         buttons = [[
-            InlineKeyboardButton("👥 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐆𝐫𝐨𝐮𝐩", url=f"https://t.me/+hB6czljfX_diZjNl"),
+            InlineKeyboardButton("👥 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐆𝐫𝐨𝐮𝐩", url=f"https://t.me/ARAKAL_THERAVAD_GROUP_01"),
             InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data='help')
         ]]
         await client.edit_message_media(
@@ -1556,7 +1556,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "movereq":
         buttons = [[
-            InlineKeyboardButton("👥 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐆𝐫𝐨𝐮𝐩", url=f"https://t.me/+hB6czljfX_diZjNl"),
+            InlineKeyboardButton("👥 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐆𝐫𝐨𝐮𝐩", url=f"https://t.me/ARAKAL_THERAVAD_GROUP_01"),
             InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data='commun')
         ]]
         await client.edit_message_media(
