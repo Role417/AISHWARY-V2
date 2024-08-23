@@ -565,6 +565,7 @@ async def qualities_cb_handler(client: Client, query: CallbackQuery):
 @Client.on_callback_query(filters.regex(r"^fl#"))
 async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
     _, qual, userid, search, key = query.data.split("#")
+    if int(userid) not in [query.from_user.id, 0]:
     search = search.replace("_", " ")    
     req = query.from_user.id
     chat_id = query.message.chat.id
