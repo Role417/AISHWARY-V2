@@ -1642,7 +1642,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             query.message.id, 
             InputMediaPhoto(random.choice(PICS))
         )      
-
     elif query.data == "stats":
         buttons = [[
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='help'),
