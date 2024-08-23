@@ -142,7 +142,7 @@ async def next_page(bot, query):
     
     btn.insert(0, 
         [
-           InlineKeyboardButton("🔺𝐎𝐓𝐓 𝐔𝐏𝐃𝐀𝐓𝐄𝐒🔺", url='https://t.me/+5XZ0kmvJwnQwOTY9'),
+           InlineKeyboardButton("🔺𝐎𝐓𝐓 𝐔𝐏𝐃𝐀𝐓𝐄𝐒🔺", url='https://t.me/OTT_ARAKAL_THERAVAD_MOVIESS'),
            InlineKeyboardButton("🔺𝐎𝐓𝐓 𝐈𝐍𝐒𝐓𝐆𝐑𝐀𝐌🔺", url='https://www.instagram.com/new_ott__updates?igsh=MTMxcmhwamF4eGp6eg==')
         ]
     )
@@ -287,7 +287,7 @@ async def filter_yearss_cb_handler(client: Client, query: CallbackQuery):
     BUTTONS[key] = search
     btn.insert(0, 
         [
-           InlineKeyboardButton("🔺𝐎𝐓𝐓 𝐔𝐏𝐃𝐀𝐓𝐄𝐒🔺", url='https://t.me/+5XZ0kmvJwnQwOTY9'),
+           InlineKeyboardButton("🔺𝐎𝐓𝐓 𝐔𝐏𝐃𝐀𝐓𝐄𝐒🔺", url='https://t.me/OTT_ARAKAL_THERAVAD_MOVIESS'),
            InlineKeyboardButton("🔺𝐎𝐓𝐓 𝐈𝐍𝐒𝐓𝐆𝐑𝐀𝐌🔺", url='https://www.instagram.com/new_ott__updates?igsh=MTMxcmhwamF4eGp6eg==')
         ]
     )
@@ -310,7 +310,7 @@ async def filter_yearss_cb_handler(client: Client, query: CallbackQuery):
         )
     else:
         btn.append(
-                    [InlineKeyboardButton(text="🎬 𝑹𝑬𝑸𝑼𝑬𝑺𝑻 𝑮𝑹𝑶𝑼𝑷 🎬", url=f"https://t.me/+BYcim_eiF3swMDhl")]
+                    [InlineKeyboardButton(text="🎬 𝑹𝑬𝑸𝑼𝑬𝑺𝑻 𝑮𝑹𝑶𝑼𝑷 🎬", url=f"https://t.me/ARAKAL_THERAVAD_GROUP_03")]
         )
     await query.edit_message_reply_markup(InlineKeyboardMarkup(btn))
     temp.SEND_ALL_TEMP[key] = files
@@ -407,7 +407,7 @@ async def filter_episodes_cb_handler(client: Client, query: CallbackQuery):
         ]
     btn.insert(0, 
         [
-           InlineKeyboardButton("🔺𝐎𝐓𝐓 𝐔𝐏𝐃𝐀𝐓𝐄𝐒🔺", url='https://t.me/+5XZ0kmvJwnQwOTY9'),
+           InlineKeyboardButton("🔺𝐎𝐓𝐓 𝐔𝐏𝐃𝐀𝐓𝐄𝐒🔺", url='https://t.me/OTT_ARAKAL_THERAVAD_MOVIESS'),
            InlineKeyboardButton("🔺𝐎𝐓𝐓 𝐈𝐍𝐒𝐓𝐆𝐑𝐀𝐌🔺", url='https://www.instagram.com/new_ott__updates?igsh=MTMxcmhwamF4eGp6eg==')
         ]
     )    
@@ -507,7 +507,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
         ]
     btn.insert(0, 
         [
-           InlineKeyboardButton("🔺𝐎𝐓𝐓 𝐔𝐏𝐃𝐀𝐓𝐄𝐒🔺", url='https://t.me/+5XZ0kmvJwnQwOTY9'),
+           InlineKeyboardButton("🔺𝐎𝐓𝐓 𝐔𝐏𝐃𝐀𝐓𝐄𝐒🔺", url='https://t.me/ARAKAL_THERAVAD_GROUP_03'),
            InlineKeyboardButton("🔺𝐎𝐓𝐓 𝐈𝐍𝐒𝐓𝐆𝐑𝐀𝐌🔺", url='https://www.instagram.com/new_ott__updates?igsh=MTMxcmhwamF4eGp6eg==')
         ]
     )
@@ -614,7 +614,7 @@ async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
     BUTTONS[key] = search
     btn.insert(0, 
         [
-           InlineKeyboardButton("🔺𝐎𝐓𝐓 𝐔𝐏𝐃𝐀𝐓𝐄𝐒🔺", url='https://t.me/+5XZ0kmvJwnQwOTY9'),
+           InlineKeyboardButton("🔺𝐎𝐓𝐓 𝐔𝐏𝐃𝐀𝐓𝐄𝐒🔺", url='https://t.me/OTT_ARAKAL_THERAVAD_MOVIESS'),
            InlineKeyboardButton("🔺𝐎𝐓𝐓 𝐈𝐍𝐒𝐓𝐆𝐑𝐀𝐌🔺", url='https://www.instagram.com/new_ott__updates?igsh=MTMxcmhwamF4eGp6eg==')
         ]
     )
@@ -637,7 +637,7 @@ async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
         )
     else:
         btn.append(
-                    [InlineKeyboardButton(text="🎬 𝑹𝑬𝑸𝑼𝑬𝑺𝑻 𝑮𝑹𝑶𝑼𝑷 🎬", url=f"https://t.me/+BYcim_eiF3swMDhl")]
+                    [InlineKeyboardButton(text="🎬 𝑹𝑬𝑸𝑼𝑬𝑺𝑻 𝑮𝑹𝑶𝑼𝑷 🎬", url=f"https://t.me/ARAKAL_THERAVAD_GROUP_03")]
         )
     await query.edit_message_reply_markup(InlineKeyboardMarkup(btn))
     temp.SEND_ALL_TEMP[key] = files
@@ -728,7 +728,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
     BUTTONS[key] = search
     btn.insert(0, 
         [
-           InlineKeyboardButton("🔺𝐎𝐓𝐓 𝐔𝐏𝐃𝐀𝐓𝐄𝐒🔺", url='https://t.me/+5XZ0kmvJwnQwOTY9'),
+           InlineKeyboardButton("🔺𝐎𝐓𝐓 𝐔𝐏𝐃𝐀𝐓𝐄𝐒🔺", url='https://t.me/OTT_ARAKAL_THERAVAD_MOVIESS'),
            InlineKeyboardButton("🔺𝐎𝐓𝐓 𝐈𝐍𝐒𝐓𝐆𝐑𝐀𝐌🔺", url='https://www.instagram.com/new_ott__updates?igsh=MTMxcmhwamF4eGp6eg==')
         ]
     )
@@ -751,7 +751,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
         )
     else:
         btn.append(
-                    [InlineKeyboardButton(text="🎬 𝑹𝑬𝑸𝑼𝑬𝑺𝑻 𝑮𝑹𝑶𝑼𝑷 🎬", url=f"https://t.me/+BYcim_eiF3swMDhl")]
+                    [InlineKeyboardButton(text="🎬 𝑹𝑬𝑸𝑼𝑬𝑺𝑻 𝑮𝑹𝑶𝑼𝑷 🎬", url=f"https://t.me/ARAKAL_THERAVAD_GROUP_03")]
         )
     await query.edit_message_reply_markup(InlineKeyboardMarkup(btn))
     temp.SEND_ALL_TEMP[key] = files
@@ -1902,7 +1902,7 @@ async def auto_filter(client, msg, spoll=False):
         ]
     btn.insert(0, 
         [
-           InlineKeyboardButton("🔺𝐎𝐓𝐓 𝐔𝐏𝐃𝐀𝐓𝐄𝐒🔺", url='https://t.me/+5XZ0kmvJwnQwOTY9'),
+           InlineKeyboardButton("🔺𝐎𝐓𝐓 𝐔𝐏𝐃𝐀𝐓𝐄𝐒🔺", url='https://t.me/OTT_ARAKAL_THERAVAD_MOVIESS'),
            InlineKeyboardButton("🔺𝐎𝐓𝐓 𝐈𝐍𝐒𝐓𝐆𝐑𝐀𝐌🔺", url='https://www.instagram.com/new_ott__updates?igsh=MTMxcmhwamF4eGp6eg==')
         ]
     )
@@ -1929,7 +1929,7 @@ async def auto_filter(client, msg, spoll=False):
         
     if offset== 0:        
         btn.append(
-                    [InlineKeyboardButton(text="🎬 𝑹𝑬𝑸𝑼𝑬𝑺𝑻 𝑮𝑹𝑶𝑼𝑷 🎬", url=f"https://t.me/+BYcim_eiF3swMDhl")]
+                    [InlineKeyboardButton(text="🎬 𝑹𝑬𝑸𝑼𝑬𝑺𝑻 𝑮𝑹𝑶𝑼𝑷 🎬", url=f"https://t.me/ARAKAL_THERAVAD_GROUP_03")]
         )
     else:
         key = f"{message.chat.id}-{message.id}"
@@ -1940,7 +1940,7 @@ async def auto_filter(client, msg, spoll=False):
             InlineKeyboardButton(text="𝑵𝒆𝒙𝒕 ⏩", callback_data=f"next_{req}_{key}_{offset}")]
        )
         btn.append(
-                    [InlineKeyboardButton(text="🎬 𝑹𝑬𝑸𝑼𝑬𝑺𝑻 𝑮𝑹𝑶𝑼𝑷 🎬", url=f"https://t.me/+BYcim_eiF3swMDhl")]
+                    [InlineKeyboardButton(text="🎬 𝑹𝑬𝑸𝑼𝑬𝑺𝑻 𝑮𝑹𝑶𝑼𝑷 🎬", url=f"https://t.me/ARAKAL_THERAVAD_GROUP_03")]
         )           
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
