@@ -41,7 +41,7 @@ NO_RESULTS_MSG = is_enabled((environ.get("NO_RESULTS_MSG", 'False')), False)
 AUTH_GROUPS = -1002105765214
 
 # MongoDB information
-SECONDDB_URI = environ.get('SECONDDB_URI', "mongodb+srv://Mamitha:Mamitha@cluster0.wlmu25d.mongodb.net/")
+SECONDDB_URI = environ.get('SECONDDB_URI', "mongodb+srv://Mamithav3:Mamithav3@cluster0.gdwtz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://Manaf:Manaf@cluster0.h8xkden.mongodb.net/")
 DATABASE_NAME = environ.get('DATABASE_NAME', "Manaf")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
