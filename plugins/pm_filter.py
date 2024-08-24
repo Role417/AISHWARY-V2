@@ -1606,17 +1606,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             text=script.AUTOFILTER_TXT,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
-        )        
-    elif query.data == "stats":
-        buttons = [[
-            InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data='botinfo'),
-            InlineKeyboardButton('🔄 𝐑ᴇғʀᴇ𝐬ʜ 🔄', callback_data='rfrsh')
-        ]]
-        await client.edit_message_media(
-            query.message.chat.id, 
-            query.message.id, 
-            InputMediaPhoto(random.choice(PICS))
-        )      
+        )            
     elif query.data == "stats":
         buttons = [[
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='help'),
