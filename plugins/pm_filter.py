@@ -49,13 +49,11 @@ NON_IMG = """<b>‼️ FILE NOT FOUND ? ‼️
 
 1️⃣ സിനിമയുടെ സ്പെല്ലിങ്ങ് ഗൂഗിളിൽ ഉള്ളത് പോലെ ആണോ നിങ്ങൾ അടിച്ചത് എന്ന് ഉറപ്പ് വരുത്തുക..!!
 
-2️⃣ നിങ്ങൾ ചോദിച്ച സിനിമ OTT റിലീസ് ആയതാണോ എന്ന് @OTT_ARAKAL_THERAVAD_MOVIESS യിൽ ചെക്ക് ചെയ്യുക..!!
+2️⃣ നിങ്ങൾ ചോദിച്ച സിനിമ തീയറ്ററിൽ റിലീസ് ആയതാണോ എന്ന്  ഉറപ്പുവരുത്തുക <a href=https://t.me/+XzVIX3lhqzAyYTQ1> 𝐏𝐑𝐄𝐃𝐕𝐃 𝐔𝐏𝐃𝐓𝐄𝐒 </a> യിൽ ചെക്ക് ചെയ്യുക..!!
 
 3️⃣ മൂവിക്ക് വേണ്ടി മെസ്സേജ് അയക്കുമ്പോൾ മൂവിയുടെ പേര് ഇറങ്ങിയ വർഷം മാത്രം അയക്കുക..!!
 
-4️⃣ കറക്റ്റ് സ്പെല്ലിങ്ങ് അറിയാൻ "Search In Google" എന്ന ബട്ടണിൽ ക്ലിക്ക് ചെയ്യുക..!!
-
-5⃣<i>‼ 𝖱𝖾𝗉𝗈𝗋𝗍 𝗍𝗈 𝖺𝖽𝗆𝗂𝗇 ▶ @ARAKAL_THERAVAD_MOVIES_02_bot</b>"""
+4⃣<i>‼ 𝖱𝖾𝗉𝗈𝗋𝗍 𝗍𝗈 𝖺𝖽𝗆𝗂𝗇 ▶ @ARAKAL_THERAVAD_MOVIES_02_bot</b>"""
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
@@ -1750,8 +1748,27 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_reply_markup(reply_markup)
-    await query.answer(MSG_ALRT)
-
+        await query.answer(MSG_ALRT)
+        
+async def ai_spell_check(wrong_name):
+    async def search_movie(wrong_name):
+        search_results = imdb.search_movie(wrong_name)
+        movie_list = [movie['title'] for movie in search_results]
+        return movie_list
+    movie_list = await search_movie(wrong_name)
+    if not movie_list:
+        return
+    for _ in range(5):
+        closest_match = process.extractOne(wrong_name, movie_list)
+        if not closest_match or closest_match[1] <= 80:
+            return 
+        movie = closest_match[0]
+        files, offset, total_results = await get_search_results(movie)
+        if files:
+            return movie
+        movie_list.remove(movie)
+    return
+    
 async def auto_filter(client, msg, spoll=False):
     if not spoll:
         message = msg
@@ -1761,14 +1778,18 @@ async def auto_filter(client, msg, spoll=False):
             return
         if len(message.text) < 100:
             search = message.text
-            files, offset, total_results = await get_search_results(search.lower(), offset=0, filter=True)
-
-            if not files:
-                if settings["spell_check"]:
-                    return await advantage_spell_chok(msg)
-                else:
-                    return
-        else:
+            files, offset, total_results = await get_search_results(search)
+        if not files:
+            if settings["spell_check"]:                
+                ai_sts = await msg.reply_text('<b>Ai is Cheking For Your Spelling. Please Wait.</b>')
+                is_misspelled = await ai_spell_check(search)
+                if is_misspelled:
+                    await ai_sts.edit(f'<b>Ai Suggested <code>{is_misspelled}</code>\nSo Im Searching for <code>{is_misspelled}</code></b>')                    
+                    msg.text = is_misspelled
+                    #await ai_sts.delete()
+                    return await auto_filter(client, msg)                
+                #await ai_sts.delete()
+                return await advantage_spell_chok(msg)
             return
     else:
         settings = await get_settings(msg.message.chat.id)
