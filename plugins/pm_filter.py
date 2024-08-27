@@ -1932,7 +1932,7 @@ async def advantage_spell_chok(msg):
             
     ]]
     spl = await msg.reply_photo(
-            photo="https://telegra.ph/file/e3015b2f6def7491b35fe.jpg", 
+            photo="https://telegra.ph/file/c38d6ec6ff10f1d5ef41e.jpg", 
             caption=NON_IMG.format(mv_rqst),
             reply_markup=InlineKeyboardMarkup(btn)
     )    
