@@ -365,7 +365,7 @@ async def start(client, message):
     )
     replied = ok.id    
     da = await message.reply(DELETE_TXT, reply_to_message_id=replied)
-    await asyncio.sleep(30)
+    await asyncio.sleep(600)
     await message.delete()    
     await da.delete()
     await asyncio.sleep(600)
