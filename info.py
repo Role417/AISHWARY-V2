@@ -26,8 +26,8 @@ MELCOW_VID = environ.get("MELCOW_VID", "https://telegra.ph/file/451f038b4e7c2ddd
 SPELL_IMG = environ.get("SPELL_IMG", "https://telegra.ph/file/5e2d4418525832bc9a1b9.jpg")
 
 # Admins, Channels & Users
-OWNER_ID = environ.get('OWNER_ID', '1297128957 1509123054')
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '1297128957 1509123054').split()]
+OWNER_ID = environ.get('OWNER_ID', '7425490417 1509123054')
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '7425490417 1509123054').split()]
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002209900171').split()]
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
@@ -49,7 +49,7 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 auth_channel = environ.get('AUTH_CHANNEL')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 # Set to False inside the bracket if you don't want to use Request Channel else set it to Channel ID
-REQ_CHANNEL=environ.get("REQ_CHANNEL", "-1002284362108")
+REQ_CHANNEL=environ.get("REQ_CHANNEL", "-1002399244381")
 REQ_CHANNEL = (int(REQ_CHANNEL) if REQ_CHANNEL and id_pattern.search(REQ_CHANNEL) else False) if REQ_CHANNEL is not None else None
 JOIN_REQS_DB = environ.get("JOIN_REQS_DB", DATABASE_URI)
 
@@ -68,7 +68,7 @@ PORT = environ.get("PORT", "8080")
 GRP_LNK = environ.get('GRP_LNK', 'https://t.me/+GOFte-Rz2tcxODg1')
 CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/+mCMdCb_ymAowZmNl')
 MSG_ALRT = environ.get('MSG_ALRT', 'Wʜᴀᴛ Aʀᴇ Yᴏᴜ Lᴏᴏᴋɪɴɢ Aᴛ ?')
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002010307613'))
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002276401285'))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'DQ_The_File_Donor_Support')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "False")), False)
 IMDB = is_enabled((environ.get('IMDB', "False")), False)
